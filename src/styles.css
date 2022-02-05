@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===== RESET ========== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+
+/* ===== LAYOUT ========== */
+:root {
+  --branco: #fff;
+}
+
+h3,
+h4 {
+  color: #555;
+}
+
+h5 {
+  color: #999;
+}
+
+.card img {
+  height: 200px;
+}
+
+.secao {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.preco {
+  color: #f60;
+  font-weight: bold;
+  font-size: 20px;
+}
