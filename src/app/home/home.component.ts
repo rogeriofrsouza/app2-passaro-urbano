@@ -1,3 +1,4 @@
+import { OfertasService } from './../ofertas.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ofertasService: OfertasService) { }
 
   ngOnInit(): void {
+    this.ofertasService.getOfertas();
   }
 
 }

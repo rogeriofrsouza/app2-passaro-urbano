@@ -1,3 +1,4 @@
+import { OfertasService } from './ofertas.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,7 +19,9 @@ import { RodapeComponent } from './rodape/rodape.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    OfertasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
