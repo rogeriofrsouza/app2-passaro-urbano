@@ -1,4 +1,4 @@
-import { OfertasService } from './ofertas.service';
+import { OfertasService } from './services/ofertas.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
