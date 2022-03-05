@@ -12,16 +12,23 @@ export class OfertasService {
   public getOfertas(): Promise<any> {
     return lastValueFrom(this.httpClient.get('http://localhost:3000/ofertas?destaque=true'));
   }
+
+  public getOfertasPorCategoria(categoria: string): Promise<any> {
+    return lastValueFrom(this.httpClient.get(`http://localhost:3000/ofertas?categoria=${categoria}`));
+  }
   
 }
 
 /*
+// Modo antigo
 public getOfertas(): Promise<Oferta[]> {
-  return this.httpClient.get('http://localhost:3000/ofertas')
-    .toPromise();
+  return this.http.get('http://localhost:3000/ofertas')
+    .toPromise()
+    .then((resposta: any) => resposta.json());
 }
 
 
+// Explicação de Promise
 public getOfertas2(): Promise<Oferta[]> { 
   return new Promise((resolve, reject) => {
 

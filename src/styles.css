@@ -6,11 +6,12 @@
 
 html,
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 

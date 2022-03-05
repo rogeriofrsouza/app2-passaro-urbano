@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DiversaoComponent } from './diversao/diversao.component';
 import { HomeComponent } from './home/home.component';
+import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { OfertasService } from './services/ofertas.service';
 import { TopoComponent } from './topo/topo.component';
-import { RestaurantesComponent } from './restaurantes/restaurantes.component';
-import { DiversaoComponent } from './diversao/diversao.component';
 
 @NgModule({
   declarations: [
