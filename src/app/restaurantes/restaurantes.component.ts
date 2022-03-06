@@ -15,6 +15,12 @@ export class RestaurantesComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit(): void {
+    this.ofertasService.getOfertasPorCategoria('restaurante')
+      .then((ofertas: Oferta[]) => {
+        console.log(ofertas);
+        this.ofertas = ofertas;
+      })
+      .catch((error) => console.log(error));
   }
 
 }

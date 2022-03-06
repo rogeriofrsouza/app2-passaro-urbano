@@ -20,7 +20,6 @@ export class OfertasService {
 }
 
 /*
-// Modo antigo
 public getOfertas(): Promise<Oferta[]> {
   return this.http.get('http://localhost:3000/ofertas')
     .toPromise()
@@ -28,7 +27,6 @@ public getOfertas(): Promise<Oferta[]> {
 }
 
 
-// Explicação de Promise
 public getOfertas2(): Promise<Oferta[]> { 
   return new Promise((resolve, reject) => {
 
