@@ -10,6 +10,7 @@ import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { OfertasService } from './services/ofertas.service';
 import { TopoComponent } from './topo/topo.component';
+import { OfertaComponent } from './oferta/oferta.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TopoComponent } from './topo/topo.component';
     HomeComponent,
     RodapeComponent,
     RestaurantesComponent,
-    DiversaoComponent
+    DiversaoComponent,
+    OfertaComponent
   ],
   imports: [
     BrowserModule,
