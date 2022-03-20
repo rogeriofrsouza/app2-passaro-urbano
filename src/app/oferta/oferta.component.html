@@ -1,25 +1,28 @@
 <div class="container">
-  <div class="oferta">
+  <div class="oferta" *ngIf="oferta != undefined">
 
+    <!-- ========== DESCRIÇÃO ========== -->
     <div class="row">
       <div class="col">
-        <h4>Super Burger - Rodízio de Mini-hambúrger com opção de entrada.</h4>
+        <h4>{{ oferta.descricaoOferta }}</h4>
       </div>
     </div>
 
+    <!-- ========== OFERTA ========== -->
     <div class="row">
+
+      <!-- 1. Imagens -->
       <div class="col-md-6">
         <div class="img-capa">
-          <img src="/assets/ofertas/1/img1.jpg" />
+          <img [src]="oferta.imagens[0].url" />
         </div>
 
         <div class="thumbnails">
-          <img src="/assets/ofertas/1/img2.jpg" />
-          <img src="/assets/ofertas/1/img3.jpg" />
-          <img src="/assets/ofertas/1/img4.jpg" />
+          <img *ngFor="let imagem of oferta.imagens" [src]="imagem.url" />
         </div>
       </div>
 
+      <!-- 2. Valor & Adicionar ao carrinho -->
       <div class="col-md-6">
         <div class="row">
           <div class="col text-center">
@@ -29,15 +32,61 @@
 
         <div class="row">
           <div class="col text-center">
-            <h1>R$ 29,90</h1>
+            <h1>{{ oferta.valor }}</h1>
           </div>
         </div>
 
         <div class="row">
           <div class="col text-center">
-            <button type="button" class="btn btn-warning btn-lg">Adicionar ao carrinho</button>
+            <button type="button" class="btn btn-warning btn-lg">
+              Adicionar ao carrinho
+            </button>
           </div>
-        </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAV TABS ========== -->
+  <div class="row" style="margin-top: 2rem; margin-bottom: 4rem;">
+    <div class="col">
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+        <!-- 1. Como usar -->
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            data-bs-toggle="tab"
+            data-bs-target="#como-usar"
+            type="button"
+            role="tab"
+            aria-controls="como-usar"
+            aria-selected="true"
+          >
+            Como usar
+          </button>
+        </li>
+    
+        <!-- 2. Onde fica? -->
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            data-bs-toggle="tab"
+            data-bs-target="#onde-fica"
+            type="button"
+            role="tab"
+            aria-controls="onde-fica"
+            aria-selected="false"
+          >
+            Onde fica?
+          </button>
+        </li>
+      </ul>
+    
+      <!-- 3. Router Outlet -->
+      <div class="tab-content">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
