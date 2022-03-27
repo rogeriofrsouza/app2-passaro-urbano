@@ -14,18 +14,32 @@ export class OfertasService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getOfertas(): Promise<any> {
-    return lastValueFrom(this.httpClient.get(`${this.ofertasUrl}?destaque=true`));
+  public getOfertas(): Promise<Oferta[]> {
+    return lastValueFrom(this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?destaque=true`));
   }
 
-  public getOfertasPorCategoria(categoria: string): Promise<any> {
-    return lastValueFrom(this.httpClient.get(`${this.ofertasUrl}?categoria=${categoria}`));
+  public getOfertasPorCategoria(categoria: string): Promise<Oferta[]> {
+    return lastValueFrom(this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?categoria=${categoria}`));
   }
 
-  public async getOfertaPorId(idOferta: number): Promise<Oferta> {
-    return await lastValueFrom(this.httpClient.get(`${this.ofertasUrl}?id=${idOferta}`))
+  public getOfertaPorId(id: number): Promise<Oferta> {
+    return lastValueFrom(this.httpClient.get<Oferta>(`${this.ofertasUrl}?id=${id}`))
       .then((resposta: any) => {
         return resposta[0];
+      });
+  }
+
+  public getComoUsarOfertaPorId(id: number): Promise<string> {
+    return lastValueFrom(this.httpClient.get<string>(environment.baseUrl + `/como-usar?id=${id}`))
+      .then((resposta: any) => {
+        return resposta[0].descricao;
+      });
+  }
+
+  public getOndeFicaOfertaPorId(id: number): Promise<string> {
+    return lastValueFrom(this.httpClient.get<string>(environment.baseUrl + `/onde-fica?id=${id}`))
+      .then((resposta: any) => {
+        return resposta[0].descricao;
       });
   }
   
