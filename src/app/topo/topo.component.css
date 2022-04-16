@@ -20,3 +20,6 @@
   height: 230px;
 }
 
+.container {
+  display: block;
+}

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { lastValueFrom, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Oferta } from './../shared/oferta.model';
@@ -41,6 +41,10 @@ export class OfertasService {
       .then((resposta: any) => {
         return resposta[0].descricao;
       });
+  }
+
+  public pesquisaOfertas(termo: string): Observable<Oferta[]> {
+    return this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?descricaoOferta=${termo}`)
   }
   
 }
