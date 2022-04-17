@@ -11,7 +11,7 @@ import { Oferta } from './../shared/oferta.model';
 })
 export class TopoComponent implements OnInit {
 
-  public ofertas!: Observable<Oferta[]>
+  public ofertas!: Observable<Oferta[]>;
 
   constructor(private ofertasService: OfertasService) { }
 
@@ -21,7 +21,12 @@ export class TopoComponent implements OnInit {
   public pesquisa(termoDaPesquisa: string): void {
     this.ofertas = this.ofertasService.pesquisaOfertas(termoDaPesquisa);
 
-    console.log(this.ofertas)
+    this.ofertas.subscribe({
+      next: (ofertas: Oferta[]) => console.log(ofertas),
+      error: (erro: any) => console.log(erro),
+      complete: () => console.log('Fluxo de eventos completo!')
+    });
+
   }
 
 }
