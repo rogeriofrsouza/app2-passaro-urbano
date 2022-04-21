@@ -12,7 +12,6 @@ import { Oferta } from './../shared/oferta.model';
 export class TopoComponent implements OnInit {
 
   public ofertas!: Observable<Oferta[]>;
-  public listaOfertas: Oferta[] = [];
   private subjectPesquisa: Subject<string> = new Subject<string>();
 
   constructor(private ofertasService: OfertasService) { }
@@ -35,17 +34,24 @@ export class TopoComponent implements OnInit {
         return of<Oferta[]>([]);
       })
     );
-
-    this.ofertas.subscribe({
-      next: (listaOfertas: Oferta[]) => {
-        console.log(listaOfertas);
-        this.listaOfertas = listaOfertas;
-      }
-    });
   }
 
   public pesquisa(termoDaPesquisa: string): void {
     this.subjectPesquisa.next(termoDaPesquisa);
   }
 
+  public limpaPesquisa(): void {
+    this.subjectPesquisa.next('');
+  }
+
 }
+
+
+/*
+  this.ofertas.subscribe({
+    next: (listaOfertas: Oferta[]) => {
+      console.log(listaOfertas);
+      this.listaOfertas = listaOfertas;
+    }
+  });
+*/
