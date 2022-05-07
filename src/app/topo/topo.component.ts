@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError, debounceTime, distinctUntilChanged, Observable, of, Subject, switchMap } from 'rxjs';
 
-import { OfertasService } from './../services/ofertas.service';
-import { Oferta } from './../shared/oferta.model';
+import { Oferta } from '../shared/models/oferta.model';
+import { OfertasService } from '../shared/services/ofertas.service';
 
 @Component({
   selector: 'app-topo',
@@ -17,14 +17,12 @@ export class TopoComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit(): void {
-    // retorno Oferta[]
     this.ofertas = this.subjectPesquisa.pipe(
       debounceTime(1000), 
       distinctUntilChanged(),
       switchMap((termo: string) => {
 
         if (termo.trim() === '') {
-          // retorna um Observable de Oferta[] vazio
           return of<Oferta[]>([]);
         }
         return this.ofertasService.pesquisaOfertas(termo);
@@ -45,13 +43,3 @@ export class TopoComponent implements OnInit {
   }
 
 }
-
-
-/*
-  this.ofertas.subscribe({
-    next: (listaOfertas: Oferta[]) => {
-      console.log(listaOfertas);
-      this.listaOfertas = listaOfertas;
-    }
-  });
-*/

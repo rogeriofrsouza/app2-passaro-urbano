@@ -13,9 +13,9 @@ import { OfertaComponent } from './oferta/oferta.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { OfertasService } from './services/ofertas.service';
+import { OfertasService } from './shared/services/ofertas.service';
 import { TopoComponent } from './topo/topo.component';
-import { DescricaoReduzidaPipe } from './pipes/descricao-reduzida.pipe';
+import { DescricaoReduzidaPipe } from './shared/pipes/descricao-reduzida.pipe';
 
 registerLocaleData(ptBr);
 

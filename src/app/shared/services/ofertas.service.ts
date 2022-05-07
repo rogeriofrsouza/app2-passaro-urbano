@@ -4,7 +4,7 @@ import { lastValueFrom, Observable } from 'rxjs';
 import { retry } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-import { Oferta } from './../shared/oferta.model';
+import { Oferta } from '../models/oferta.model';
 
 @Injectable({
   providedIn: 'root'

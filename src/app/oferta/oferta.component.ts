@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { OfertasService } from './../services/ofertas.service';
-import { Oferta } from './../shared/oferta.model';
+import { Oferta } from '../shared/models/oferta.model';
+import { OfertasService } from '../shared/services/ofertas.service';
 
 @Component({
   selector: 'app-oferta',
@@ -27,8 +27,6 @@ export class OfertaComponent implements OnInit {
           .catch(error => console.log(error));       
       }
     })
-
-    
   }
 
 }
