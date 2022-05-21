@@ -11,11 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { DescricaoReduzidaPipe } from './shared/pipes/descricao-reduzida.pipe';
 import { OfertasService } from './shared/services/ofertas.service';
 import { TopoComponent } from './topo/topo.component';
-import { DescricaoReduzidaPipe } from './shared/pipes/descricao-reduzida.pipe';
 
 registerLocaleData(ptBr);
 
@@ -30,7 +31,8 @@ registerLocaleData(ptBr);
     OfertaComponent,
     ComoUsarComponent,
     OndeFicaComponent,
-    DescricaoReduzidaPipe
+    DescricaoReduzidaPipe,
+    OrdemCompraComponent
   ],
   imports: [
     BrowserModule,

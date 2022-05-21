@@ -1,3 +1,4 @@
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'como-usar', component: ComoUsarComponent },
       { path: 'onde-fica', component: OndeFicaComponent }
     ] 
-  }
+  },
+  { path: 'ordem-compra', component: OrdemCompraComponent }
 ];
 
 @NgModule({
