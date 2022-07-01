@@ -1,6 +1,6 @@
 export interface Pedido {
-  endereco: string,
-  numero: number,
-  complemento: string,
-  formaPagamento: string
+  endereco: string;
+  numero: number;
+  complemento: string;
+  formaPagamento: string;
 }

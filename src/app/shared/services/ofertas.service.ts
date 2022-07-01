@@ -44,8 +44,8 @@ export class OfertasService {
       });
   }
 
-  public pesquisaOfertas(termo: string): Observable<Oferta[]> {
-    return this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?descricaoOferta_like=${termo}`).pipe(
+  public pesquisaOfertas(termoDaPesquisa: string): Observable<Oferta[]> {
+    return this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?descricaoOferta_like=${termoDaPesquisa}`).pipe(
       retry(10)
     );
   }
@@ -59,7 +59,6 @@ public getOfertas(): Promise<Oferta[]> {
     .toPromise()
     .then((resposta: any) => resposta.json());
 }
-
 
 public getOfertas2(): Promise<Oferta[]> { 
   return new Promise((resolve, reject) => {
