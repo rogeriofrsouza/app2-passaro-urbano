@@ -22,7 +22,7 @@ export class ComoUsarComponent implements OnInit {
       next: (params: Params) => {
 
         this.ofertasService.getComoUsarOfertaPorId(params['id'])
-          .then((descricao: string) => this.comoUsar = descricao)
+          .then((comoUsar: string) => this.comoUsar = comoUsar)
           .catch(error => console.log(error));
       }
     })

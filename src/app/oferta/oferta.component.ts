@@ -24,9 +24,9 @@ export class OfertaComponent implements OnInit {
 
         this.ofertasService.getOfertaPorId(params['id'])
           .then((oferta: Oferta) => this.oferta = oferta)
-          .catch(error => console.log(error));       
+          .catch(error => console.log(error));
       }
-    })
+    });
   }
 
 }
@@ -40,7 +40,7 @@ export class OfertaComponent implements OnInit {
     complete: () => console.log('Complete!')
   });
 
-
+  ------------------------------------------------
   // Observables - Prática 2
   let tempo = interval(2000);
 
@@ -48,7 +48,7 @@ export class OfertaComponent implements OnInit {
     next: (intervalo: number) => console.log(intervalo)
   });
 
-
+  ------------------------------------------------
   // Observables - Prática 3
   private tempoObservableSubscription!: Subscription;
   private meuObservableTesteSubscription!: Subscription;

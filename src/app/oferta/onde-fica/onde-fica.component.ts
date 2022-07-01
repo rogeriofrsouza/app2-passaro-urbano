@@ -22,7 +22,7 @@ export class OndeFicaComponent implements OnInit {
       next: (params: Params) => {
         
         this.ofertasService.getOndeFicaOfertaPorId(params['id'])
-          .then((descricao: string) => this.ondeFica = descricao)
+          .then((ondeFica: string) => this.ondeFica = ondeFica)
           .catch(error => console.log(error));
       }
     })
