@@ -1,13 +1,21 @@
+a {
+  text-decoration: none;
+  color: #555;
+}
+
 .menu {
   background: #006acb;
+}
+
+.container {
+  display: block;
 }
 
 .nav-link {
   color: #c1e4ff;
 }
 
-.nav-link:hover,
-.active {
+.nav-link:hover, .active {
   color: var(--branco);
 }
 
@@ -18,8 +26,4 @@
 .banner img {
   width: 100%;
   height: 230px;
-}
-
-.container {
-  display: block;
 }

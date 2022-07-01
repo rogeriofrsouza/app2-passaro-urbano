@@ -20,12 +20,12 @@ export class TopoComponent implements OnInit {
     this.ofertas = this.subjectPesquisa.pipe(
       debounceTime(1000), 
       distinctUntilChanged(),
-      switchMap((termo: string) => {
+      switchMap((termoDaPesquisa: string) => {
 
-        if (termo.trim() === '') {
+        if (termoDaPesquisa.trim() === '') {
           return of<Oferta[]>([]);
         }
-        return this.ofertasService.pesquisaOfertas(termo);
+        return this.ofertasService.pesquisaOfertas(termoDaPesquisa);
       }), 
       catchError((error: any) => {
         console.log(error);
