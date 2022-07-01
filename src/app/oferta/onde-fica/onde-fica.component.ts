@@ -25,7 +25,7 @@ export class OndeFicaComponent implements OnInit {
           .then((ondeFica: string) => this.ondeFica = ondeFica)
           .catch(error => console.log(error));
       }
-    })
+    });
   }
 
 }

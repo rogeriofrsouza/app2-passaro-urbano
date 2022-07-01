@@ -25,7 +25,7 @@ export class ComoUsarComponent implements OnInit {
           .then((comoUsar: string) => this.comoUsar = comoUsar)
           .catch(error => console.log(error));
       }
-    })
+    });
   }
 
 }
