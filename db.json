@@ -112,7 +112,7 @@
 		},
 		{
 			"id": 6,
-			"descricao": "Não é necessário agendar. Sujeito à fila."
+			"descricao": "Não é necessário agendar. Sujeito à fila"
 		}
 	],
 	"onde-fica": [
@@ -122,7 +122,7 @@
 		},
 		{
 			"id": 2,
-			"descricao": "Rua Francisco Mendes, 1000, Rio de Janeiro - SP "
+			"descricao": "Rua Francisco Mendes, 1000, Rio de Janeiro - SP"
 		},
 		{
 			"id": 3,
@@ -138,7 +138,7 @@
 		},
 		{
 			"id": 6,
-			"descricao": "Estrada Maria das Graças, 12, Salvador - BA "
+			"descricao": "Estrada Maria das Graças, 12, Salvador - BA"
 		}
 	]
 }

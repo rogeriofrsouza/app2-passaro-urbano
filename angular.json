@@ -27,11 +27,11 @@
               "src/assets"
             ],
             "styles": [
-              "../app2-passaro-urbano/node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "../app2-passaro-urbano/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
-              "../app2-passaro-urbano/node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "../app2-passaro-urbano/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
