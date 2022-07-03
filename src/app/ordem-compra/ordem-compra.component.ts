@@ -13,7 +13,7 @@ export class OrdemCompraComponent implements OnInit {
   public pedido: Pedido = {} as Pedido;
 
   public endereco: string = '';
-  public numero: string = '';
+  public numero!: number;
   public complemento: string = '';
   public formaPagamento: string = '';
 
@@ -39,7 +39,6 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaEndereco(endereco: string): void {
     this.endereco = endereco;
-
     this.enderecoPristine = false;
 
     if (this.endereco.length > 3 && this.endereco.trim() != '') {
@@ -52,11 +51,10 @@ export class OrdemCompraComponent implements OnInit {
   }
 
   public atualizaNumero(numero: string): void {
-    this.numero = numero;
-
+    this.numero = Number(numero);
     this.numeroPristine = false;
 
-    if (this.numero.toString().length > 0 && Number(this.numero) > 0) {
+    if (this.numero > 0) {
       this.numeroValido = true;
     } else {
       this.numeroValido = false;
@@ -67,7 +65,6 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaComplemento(complemento: string): void {
     this.complemento = complemento;
-
     this.complementoPristine = false;
 
     if (this.complemento.length > 0) {
@@ -81,7 +78,6 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaFormaPagamento(formaPagamento: string): void {
     this.formaPagamento = formaPagamento;
-
     this.formaPagamentoPristine = false;
 
     if (this.formaPagamento.length > 0) {
@@ -103,7 +99,7 @@ export class OrdemCompraComponent implements OnInit {
 
   public confirmarCompra(): void {
     this.pedido.endereco = this.endereco;
-    this.pedido.numero = Number(this.numero);
+    this.pedido.numero = this.numero;
     this.pedido.complemento = this.complemento;
     this.pedido.formaPagamento = this.formaPagamento;
 
