@@ -15,6 +15,9 @@ export class OrdemCompraService {
   constructor(private httpClient: HttpClient) { }
 
   public efetivarCompra(pedido: Pedido): Observable<any> {
-    return this.httpClient.post(`${this.pedidosUrl}`, pedido);
+    const headers = { 'Content-Type': 'application/json' };
+    const body = JSON.stringify(pedido);
+
+    return this.httpClient.post<any>(`${this.pedidosUrl}`, body, { headers });
   }
 }
