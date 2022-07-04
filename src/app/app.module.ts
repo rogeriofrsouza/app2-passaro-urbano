@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { OrdemCompraSucessoComponent } from './ordem-compra/ordem-compra-sucesso/ordem-compra-sucesso.component';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
@@ -32,7 +33,8 @@ registerLocaleData(ptBr);
     ComoUsarComponent,
     OndeFicaComponent,
     DescricaoReduzidaPipe,
-    OrdemCompraComponent
+    OrdemCompraComponent,
+    OrdemCompraSucessoComponent
   ],
   imports: [
     BrowserModule,

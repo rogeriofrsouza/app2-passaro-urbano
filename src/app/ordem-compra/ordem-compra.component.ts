@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pedido } from '../shared/models/pedido.model';
 
+import { Pedido } from '../shared/models/pedido.model';
 import { OrdemCompraService } from '../shared/services/ordem-compra.service';
 
 @Component({
@@ -10,6 +10,9 @@ import { OrdemCompraService } from '../shared/services/ordem-compra.service';
 })
 export class OrdemCompraComponent implements OnInit {
 
+  public idPedidoCompra!: number;
+
+  //Pedido
   public pedido: Pedido = {} as Pedido;
 
   public endereco: string = '';
@@ -104,7 +107,10 @@ export class OrdemCompraComponent implements OnInit {
     this.pedido.formaPagamento = this.formaPagamento;
 
     this.ordemCompraService.efetivarCompra(this.pedido).subscribe({
-      next: response => console.log(response)
+      next: (response: any) => {
+        console.log(response);
+        this.idPedidoCompra = response.id;
+      }
     });
   }
 
