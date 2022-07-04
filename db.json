@@ -192,6 +192,13 @@
       "complemento": "Casa 2",
       "formaPagamento": "dinheiro",
       "id": 1
+    },
+    {
+      "endereco": "Rua Testadora",
+      "numero": 123,
+      "complemento": "Próximo a Farmácia",
+      "formaPagamento": "debito",
+      "id": 2
     }
   ]
 }
