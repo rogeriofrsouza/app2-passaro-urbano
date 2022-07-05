@@ -199,6 +199,13 @@
       "complemento": "Próximo a Farmácia",
       "formaPagamento": "debito",
       "id": 2
+    },
+    {
+      "endereco": "Rua José da Silva",
+      "numero": "500",
+      "complemento": "Casa A",
+      "formaPagamento": "dinheiro",
+      "id": 3
     }
   ]
 }

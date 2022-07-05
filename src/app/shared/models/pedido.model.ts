@@ -3,4 +3,5 @@ export interface Pedido {
   numero: number;
   complemento: string;
   formaPagamento: string;
+  id?: number;
 }
