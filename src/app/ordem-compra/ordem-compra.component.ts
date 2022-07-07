@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Pedido } from './../shared/models/pedido.model';
+import { CarrinhoService } from './../shared/services/carrinho.service';
 import { OrdemCompraService } from './../shared/services/ordem-compra.service';
 
 @Component({
@@ -20,10 +21,10 @@ export class OrdemCompraComponent implements OnInit {
 
   public idPedidoCompra?: number;
 
-  constructor(private ordemCompraService: OrdemCompraService) { }
+  constructor(private ordemCompraService: OrdemCompraService, private carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
-    
+    console.log(this.carrinhoService.exibirItens());
   }
 
   public confirmarCompra(): void {

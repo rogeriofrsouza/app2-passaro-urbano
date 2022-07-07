@@ -17,7 +17,9 @@ import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { DescricaoReduzidaPipe } from './shared/pipes/descricao-reduzida.pipe';
+import { CarrinhoService } from './shared/services/carrinho.service';
 import { OfertasService } from './shared/services/ofertas.service';
+import { OrdemCompraService } from './shared/services/ordem-compra.service';
 import { TopoComponent } from './topo/topo.component';
 
 registerLocaleData(ptBr);
@@ -45,6 +47,8 @@ registerLocaleData(ptBr);
   ],
   providers: [
     OfertasService, 
+    OrdemCompraService, 
+    CarrinhoService, 
     { provide: LOCALE_ID, useValue: 'pt-Br' },  
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
   ],
