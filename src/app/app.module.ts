@@ -49,7 +49,7 @@ registerLocaleData(ptBr);
     OfertasService, 
     OrdemCompraService, 
     CarrinhoService, 
-    { provide: LOCALE_ID, useValue: 'pt-Br' },  
+    { provide: LOCALE_ID, useValue: 'pt-Br' }, 
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
   ],
   bootstrap: [AppComponent]

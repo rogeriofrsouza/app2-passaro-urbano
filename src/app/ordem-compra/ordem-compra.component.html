@@ -3,57 +3,45 @@
     <form [formGroup]="formulario" (ngSubmit)="confirmarCompra()" novalidate>
       <h5>Sua Compra</h5>
       <hr />
-
-      <!-- Item 1 -->
+      
       <div class="container">
-        <div class="row align-items-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-          <div class="col-sm-1">
-            <img src="/assets/ofertas/1/img1.jpg" class="img-fluid">
-          </div>
+        <!-- Itens do Carrinho -->
+        <div *ngIf="itensCarrinho.length; else carrinhoVazio">
+          <div *ngFor="let item of itensCarrinho" class="row align-items-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+            <div class="col-sm-1">
+              <img [src]="item.oferta.imagens[0].url" [alt]="item.oferta.imagens[0].alt" class="img-fluid">
+            </div>
+    
+            <div class="col-sm-6">
+              {{ item.oferta.titulo }}<br />
+              {{ item.oferta.descricaoOferta }}
+            </div>
   
-          <div class="col-sm-6">
-            Super Burger
-            <br />
-            Rodízio de Mini-hambúrger com opção de entrada.
+            <div class="col-sm-2">
+              <button (click)="alterarQuantidade(item, '-')" type="button" class="btn btn-link">-</button>
+              {{ item.quantidade }}
+              <button (click)="alterarQuantidade(item, '+')" type="button" class="btn btn-link">+</button>
+            </div>
+            
+            <div class="col-sm-3 d-flex justify-content-end">{{ item.quantidade * item.oferta.valor | currency }}</div>
           </div>
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-link">-</button>
-            1
-            <button type="button" class="btn btn-link">+</button>
-          </div>
-          
-          <div class="col-sm-3 d-flex justify-content-end">29.90</div>
-        </div>
-  
-        <!-- Item 2 -->
-        <div class="row align-items-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-          <div class="col-sm-1">
-            <img src="/assets/ofertas/4/img1.jpg" class="img-fluid">
-          </div>
-  
-          <div class="col-sm-6">
-            Estância das águas
-            <br />
-            Diversão garantida com piscinas, trilhas e muito mais.
-          </div>
-          <div class="col-sm-2">
-            <button type="button" class="btn btn-link">-</button>
-            1
-            <button type="button" class="btn btn-link">+</button>
-          </div>
-          
-          <div class="col-sm-3 d-flex justify-content-end">31.90</div>
-        </div>
-      </div>
 
-      <!-- Total -->
-      <div class="col d-flex justify-content-end mt-3">
-        <h4>Total do pedido: 61.80</h4>
-      </div>
-      <br />
+          <!-- Total -->
+          <div class="col d-flex justify-content-end mt-3">
+            <h4>Total do pedido: {{ carrinhoService.totalCarrinhoCompras() | currency }}</h4>
+          </div>
+        </div>
 
+        <!-- Carrinho vazio -->
+        <ng-template #carrinhoVazio>
+          <div class="row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+            Seu carrinho está vazio. Não perca tempo, aproveite as nossas ofertas!
+          </div>
+        </ng-template>
+      </div>
+      
       <!-- Formulário -->
-      <h5>Dados de entrega</h5>
+      <h5 class="mt-4">Dados de entrega</h5>
       <hr />
       <div class="row">
         <div class="col-md-6">
@@ -70,7 +58,7 @@
 
         <div class="col-md-2">
           <input 
-            type="text" 
+            type="number" 
             class="form-control" 
             placeholder="Número" 
             autocomplete="off" 
@@ -95,16 +83,14 @@
 
       <h5>Dados de pagamento</h5>
       <hr />
-      <div>
-        <div class="col-md-3">
-          <select class="form-control" formControlName="formaPagamento">
-            <option value="">Selecione uma opção</option>
-            <option value="dinheiro">Dinheiro</option>
-            <option value="debito">Débito</option>
-          </select>
-          <small *ngIf="formulario.get('formaPagamento')?.valid && formulario.get('formaPagamento')?.touched" class="form-text text-success">Ok</small>
-          <small *ngIf="formulario.get('formaPagamento')?.invalid && formulario.get('formaPagamento')?.touched" class="form-text text-danger">Forma de pagamento inválida</small>
-        </div>
+      <div class="col-md-3">
+        <select class="form-control" formControlName="formaPagamento">
+          <option value="">Selecione uma opção</option>
+          <option value="dinheiro">Dinheiro</option>
+          <option value="debito">Débito</option>
+        </select>
+        <small *ngIf="formulario.get('formaPagamento')?.valid && formulario.get('formaPagamento')?.touched" class="form-text text-success">Ok</small>
+        <small *ngIf="formulario.get('formaPagamento')?.invalid && formulario.get('formaPagamento')?.touched" class="form-text text-danger">Forma de pagamento inválida</small>
       </div>
       <hr />
 
