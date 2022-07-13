@@ -89,12 +89,6 @@
         },
         {
           "url": "/assets/ofertas/4/img4.jpg"
-        },
-        {
-          "url": "/assets/ofertas/4/img5.jpg"
-        },
-        {
-          "url": "/assets/ofertas/4/img6.jpg"
         }
       ]
     },
@@ -140,7 +134,7 @@
     },
     {
       "id": 2,
-      "descricao": "Válido de segunda a quinta das 12h as 23h"
+      "descricao": "Válido de segunda a quinta das 12h às 23h"
     },
     {
       "id": 3,
@@ -152,7 +146,7 @@
     },
     {
       "id": 5,
-      "descricao": "Válido de segunda a sábado das 12h as 23h. Necessário agendamento prévio"
+      "descricao": "Válido de segunda a sábado das 12h às 23h. Necessário agendamento prévio"
     },
     {
       "id": 6,
@@ -213,6 +207,87 @@
       "complemento": "Casa",
       "formaPagamento": "dinheiro",
       "id": 4
+    },
+    {
+      "endereco": "Rua das Oliveiras",
+      "numero": 12,
+      "complemento": null,
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "oferta": {
+            "id": 1,
+            "categoria": "restaurante",
+            "titulo": "Super Burger",
+            "descricaoOferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+            "anunciante": "Original Burger",
+            "valor": 29.9,
+            "destaque": true,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/1/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/1/img2.jpg"
+              },
+              {
+                "url": "/assets/ofertas/1/img3.jpg"
+              },
+              {
+                "url": "/assets/ofertas/1/img4.jpg"
+              }
+            ]
+          },
+          "quantidade": 2
+        },
+        {
+          "oferta": {
+            "id": 5,
+            "categoria": "diversao",
+            "titulo": "Kart",
+            "descricaoOferta": "Bateria de Kart de 30 minutos.",
+            "anunciante": "Speed Kart",
+            "valor": 54.9,
+            "destaque": false,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/5/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/5/img2.jpg"
+              }
+            ]
+          },
+          "quantidade": 1
+        },
+        {
+          "oferta": {
+            "id": 3,
+            "categoria": "restaurante",
+            "titulo": "Pizzas Grandes",
+            "descricaoOferta": "Pizza Grande, Mussarela, Marguerita ou outras!",
+            "anunciante": "Nossa Pizza",
+            "valor": 21.9,
+            "destaque": false,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/3/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/3/img2.jpg"
+              },
+              {
+                "url": "/assets/ofertas/3/img3.jpg"
+              },
+              {
+                "url": "/assets/ofertas/3/img4.jpg"
+              }
+            ]
+          },
+          "quantidade": 3
+        }
+      ],
+      "id": 5
     }
   ]
 }

@@ -29,8 +29,6 @@ export class OfertaComponent implements OnInit {
           .catch(error => console.log(error));
       }
     });
-
-    console.log(this.carrinhoService.exibirItens());
   }
 
   public adicionarItemCarrinho(): void {

@@ -1,8 +1,9 @@
 span {
-  color: var(--branco);
+  color: var(--neutral-4);
 }
 
 .row {
-  background: #0057a6;
+  background: var(--brand-3);
   padding: 10px;
+  margin: 0;
 }

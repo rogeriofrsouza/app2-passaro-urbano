@@ -19,10 +19,10 @@
           <h5>{{ oferta.descricaoOferta }}</h5>
         </div>
         <div class="row">
-          <p>Anunciado por: <b>{{ oferta.anunciante }}</b></p>
+          <p>Anunciado por: <span>{{ oferta.anunciante }}</span></p>
         </div>
         <div class="row">
-          <p>{{ oferta.valor | currency }}</p>
+          <p style="color: var(--brand-1); font-weight: bold;">{{ oferta.valor | currency }}</p>
         </div>
         <div class="row">
           <button class="btn btn-outline-success" [routerLink]="['/oferta', oferta.id]">Ver oferta</button>

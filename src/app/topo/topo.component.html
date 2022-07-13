@@ -1,58 +1,58 @@
-<div class="fixed-top">
-  <nav class="navbar navbar-light bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <a class="navbar-brand" routerLink="">
-            <img src="../../assets/logo.png" alt="Logo">
-          </a>
-        </div>
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <a class="navbar-brand" routerLink="">
+          <img src="../../assets/logo.png" alt="Logo">
+        </a>
+      </div>
 
-        <!-- Caixa de pesquisa -->
-        <div class="col-md-6">
-          <input 
-            #termoDaPesquisa 
-            type="text" 
-            class="form-control" 
-            placeholder="Pesquise por ofertas..." 
-            (keyup)="pesquisa(termoDaPesquisa.value)" 
-          />
-          <ul class="list-group" style="position: absolute; z-index: 10">
-            <li *ngFor="let oferta of ofertas | async" class="list-group-item">
-              <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
-                {{ oferta.titulo | descricaoReduzida: 15 }}
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Carrinho -->
-        <div class="col-md-2">
-          <div class="d-flex justify-content-end">
-            <a routerLink="/ordem-compra">
-              <img src="../../assets/carrinho.png" alt="Carrinho">
+      <!-- Caixa de pesquisa -->
+      <div class="col-md-6">
+        <input 
+          #termoDaPesquisa 
+          type="text" 
+          class="form-control" 
+          placeholder="Pesquise por ofertas..." 
+          (keyup)="pesquisa(termoDaPesquisa.value)" 
+        />
+        <ul class="list-group" style="position: absolute; z-index: 10">
+          <li *ngFor="let oferta of ofertas | async" class="list-group-item">
+            <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
+              {{ oferta.titulo | descricaoReduzida: 15 }}
             </a>
-          </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Carrinho -->
+      <div class="col-md-2">
+        <div class="d-flex justify-content-end">
+          <a routerLink="/ordem-compra">
+            <img src="../../assets/carrinho.png" alt="Carrinho">
+          </a>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Menu -->
-  <div class="menu">
-    <div class="container">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/restaurantes">Restaurantes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/diversao">Diversão</a>
-        </li>
-      </ul>
-    </div>
+<!-- Menu -->
+<div class="menu">
+  <div class="container">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/restaurantes">Restaurantes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/diversao">Diversão</a>
+      </li>
+    </ul>
   </div>
 </div>
 
-<div class="banner">
-  <img src="../../assets/banners/img_1.jpg" alt="Banner">
-</div>
+<!--
+  <div class="banner">
+    <img src="../../assets/banners/img_1.jpg" alt="Banner">
+  </div>
+-->

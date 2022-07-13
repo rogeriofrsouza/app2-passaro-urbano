@@ -1,13 +1,11 @@
 /* ===== RESET ========== */
 * {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* ===== BASE ========== */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 html, body {
@@ -16,15 +14,21 @@ html, body {
 
 /* ===== LAYOUT ========== */
 :root {
-  --branco: #fff;
+  --brand-1: #fb6404;
+  --brand-2: #046bcb;
+  --brand-3: #044f99;
+  --neutral-1: #555;
+  --neutral-2: #999;
+  --neutral-3: #2c2c2c;
+  --neutral-4: #fff;
 }
 
 h3, h4 {
-  color: #555;
+  color: var(--neutral-1);
 }
 
 h5 {
-  color: #999;
+  color: var(--neutral-2);
 }
 
 .secao {
@@ -32,12 +36,10 @@ h5 {
   margin-bottom: 30px;
 }
 
-.card img {
-  height: 200px;
+p {
+  color: var(--neutral-3);
 }
 
-.preco {
-  color: #f60;
-  font-weight: bold;
-  font-size: 20px;
+.card img {
+  height: 200px;
 }

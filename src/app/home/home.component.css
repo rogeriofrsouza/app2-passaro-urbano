@@ -1,0 +1,9 @@
+.preco {
+  color: var(--brand-1);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1116px !important;
+}
