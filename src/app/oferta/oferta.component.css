@@ -1,6 +1,6 @@
 .img-capa img {
-  width: 372px;
-  height: 240px;
+  max-width: 372px;
+  max-height: 240px;
 }
 
 .thumbnails {
