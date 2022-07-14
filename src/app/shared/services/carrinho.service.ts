@@ -1,7 +1,7 @@
-import { Oferta } from './../models/oferta.model';
 import { Injectable } from '@angular/core';
 
 import { ItemCarrinho } from '../models/item-carrinho.model';
+import { Oferta } from './../models/oferta.model';
 
 @Injectable({
   providedIn: 'root'

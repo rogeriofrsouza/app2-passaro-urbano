@@ -34,9 +34,11 @@
 
         <!-- Carrinho vazio -->
         <ng-template #carrinhoVazio>
-          <div class="row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-            Seu carrinho está vazio. Não perca tempo, aproveite as nossas ofertas!
-          </div>
+          <a routerLink="">
+            <div class="row d-flex justify-content-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+              Seu carrinho está vazio. Não perca tempo, aproveite as nossas ofertas!
+            </div>
+          </a>
         </ng-template>
       </div>
       
@@ -95,6 +97,9 @@
       <hr />
 
       <button type="submit" class="btn btn-primary btn-lg">Cofirmar compra</button>
+
+      <!-- Alerta -->
+      <app-alerta></app-alerta>
     </form>
   </div>
 

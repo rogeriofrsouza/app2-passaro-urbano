@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { Oferta } from '../shared/models/oferta.model';
 import { OfertasService } from '../shared/services/ofertas.service';
+import { AlertaService } from './../shared/services/alerta.service';
 import { CarrinhoService } from './../shared/services/carrinho.service';
 
 @Component({
@@ -17,7 +18,8 @@ export class OfertaComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, 
     private ofertasService: OfertasService, 
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService, 
+    private alertaService: AlertaService
   ) { }
 
   ngOnInit(): void {
@@ -29,10 +31,13 @@ export class OfertaComponent implements OnInit {
           .catch(error => console.log(error));
       }
     });
+
+    this.alertaService.fecharAlerta();
   }
 
   public adicionarItemCarrinho(): void {
     this.carrinhoService.incluirItem(this.oferta);
+    this.alertaService.exibirAlerta('Oferta adicionada com sucesso!', 'success', 'check-circle-fill');
   }
 
 }

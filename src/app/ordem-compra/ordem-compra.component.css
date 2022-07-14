@@ -17,3 +17,8 @@ select.ng-valid.ng-touched {
 .btn-link {
   text-decoration: none;
 }
+
+a {
+  text-decoration: none !important;
+  color: var(--neutral-3) !important;
+}

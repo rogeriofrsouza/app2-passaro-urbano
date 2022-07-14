@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ItemCarrinho } from './../shared/models/item-carrinho.model';
 import { Pedido } from './../shared/models/pedido.model';
+import { AlertaService } from './../shared/services/alerta.service';
 import { CarrinhoService } from './../shared/services/carrinho.service';
 import { OrdemCompraService } from './../shared/services/ordem-compra.service';
 
@@ -23,10 +24,14 @@ export class OrdemCompraComponent implements OnInit {
   public idPedidoCompra?: number;
   public itensCarrinho: ItemCarrinho[] = [];
 
-  constructor(private ordemCompraService: OrdemCompraService, public carrinhoService: CarrinhoService) { }
+  constructor(
+    private ordemCompraService: OrdemCompraService, 
+    public carrinhoService: CarrinhoService,
+    public alertaService: AlertaService) { }
 
   ngOnInit() {
     this.itensCarrinho = this.carrinhoService.exibirItens();
+    this.alertaService.fecharAlerta();
   }
 
   public confirmarCompra(): void {
@@ -35,6 +40,7 @@ export class OrdemCompraComponent implements OnInit {
       this.formulario.get('numero')?.markAsTouched();
       this.formulario.get('complemento')?.markAsTouched();
       this.formulario.get('formaPagamento')?.markAsTouched();
+      this.alertaService.exibirAlerta('Formulário inválido, preencha os campos obrigatórios!', 'danger', 'exclamation-triangle-fill');
 
     } else {
       if (this.itensCarrinho.length) {
@@ -53,7 +59,7 @@ export class OrdemCompraComponent implements OnInit {
           }
         });
       } else {
-        alert('Você não selecionou nenhum item!');
+        this.alertaService.exibirAlerta('Seu carrinho está vazio!', 'warning', 'exclamation-triangle-fill');
       }
     }
   }

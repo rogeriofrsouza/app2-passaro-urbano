@@ -5,6 +5,7 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { AlertaComponent } from './alerta/alerta.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DiversaoComponent } from './diversao/diversao.component';
@@ -17,6 +18,7 @@ import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { DescricaoReduzidaPipe } from './shared/pipes/descricao-reduzida.pipe';
+import { AlertaService } from './shared/services/alerta.service';
 import { CarrinhoService } from './shared/services/carrinho.service';
 import { OfertasService } from './shared/services/ofertas.service';
 import { OrdemCompraService } from './shared/services/ordem-compra.service';
@@ -37,7 +39,8 @@ registerLocaleData(ptBr);
     OndeFicaComponent,
     DescricaoReduzidaPipe,
     OrdemCompraComponent,
-    OrdemCompraSucessoComponent
+    OrdemCompraSucessoComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ registerLocaleData(ptBr);
     OfertasService, 
     OrdemCompraService, 
     CarrinhoService, 
+    AlertaService,
     { provide: LOCALE_ID, useValue: 'pt-Br' }, 
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }
   ],
