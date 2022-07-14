@@ -16,5 +16,5 @@ img {
 
 span {
   font-weight: bold;
-  color: var(--brand-3);
+  color: var(--brand-3) !important;
 }

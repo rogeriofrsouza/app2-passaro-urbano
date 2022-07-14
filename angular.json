@@ -105,5 +105,7 @@
       }
     }
   },
-  "defaultProject": "app2-passaro-urbano"
+  "cli": {
+    "analytics": false
+  }
 }

@@ -3,7 +3,7 @@
 }
 
 .preco {
-  color: var(--brand-1);
+  color: var(--brand-1) !important;
   font-weight: bold;
   font-size: 20px;
 }

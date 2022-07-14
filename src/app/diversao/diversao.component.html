@@ -22,7 +22,7 @@
           <p>Anunciado por: <span>{{ oferta.anunciante }}</span></p>
         </div>
         <div class="row">
-          <p style="color: var(--brand-1); font-weight: bold;">{{ oferta.valor | currency }}</p>
+          <p class="ofertas-preco">{{ oferta.valor | currency }}</p>
         </div>
         <div class="row">
           <button class="btn btn-outline-success" [routerLink]="['/oferta', oferta.id]">Ver oferta</button>
