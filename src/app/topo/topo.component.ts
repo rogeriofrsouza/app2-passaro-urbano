@@ -1,3 +1,4 @@
+import { CarrinhoService } from './../shared/services/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 import { catchError, debounceTime, distinctUntilChanged, Observable, of, Subject, switchMap } from 'rxjs';
 
@@ -14,7 +15,7 @@ export class TopoComponent implements OnInit {
   public ofertas!: Observable<Oferta[]>;
   private subjectPesquisa: Subject<string> = new Subject<string>();
 
-  constructor(private ofertasService: OfertasService) { }
+  constructor(private ofertasService: OfertasService, public carrinhoService: CarrinhoService) { }
 
   ngOnInit(): void {
     this.ofertas = this.subjectPesquisa.pipe(
