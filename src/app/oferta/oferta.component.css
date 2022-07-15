@@ -1,3 +1,8 @@
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .img-capa img {
   max-width: 100%;
   width: 372px;

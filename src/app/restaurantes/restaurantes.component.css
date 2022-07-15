@@ -9,12 +9,22 @@ img {
   border-radius: 4px;
 }
 
-.btn {
-  width: 6rem;
-  margin-left: 12px;
+h4 {
+  padding-top: .5rem;
 }
 
 span {
   font-weight: bold;
   color: var(--brand-3) !important;
+}
+
+.btn {
+  width: 6rem;
+  margin-left: 12px;
+}
+
+@media(min-width: 768px) {
+  h4 {
+    padding-top: 0;
+  }
 }

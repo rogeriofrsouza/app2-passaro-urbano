@@ -4,10 +4,6 @@
   padding-bottom: 4.5rem;
 }
 
-.col-sm-4 {
-  max-width: 320px;
-}
-
 .col-sm-4:nth-child(2), .col-sm-4:nth-child(3) {
   padding-top: 1rem;
 }

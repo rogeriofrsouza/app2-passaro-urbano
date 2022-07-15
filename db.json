@@ -323,6 +323,113 @@
         }
       ],
       "id": 6
+    },
+    {
+      "endereco": "Rua Silva de Pindamonhangaba",
+      "numero": 510,
+      "complemento": "Condomínio Villas Boas",
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "oferta": {
+            "id": 1,
+            "categoria": "restaurante",
+            "titulo": "Super Burger",
+            "descricaoOferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+            "anunciante": "Original Burger",
+            "valor": 29.9,
+            "destaque": true,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/1/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/1/img2.jpg"
+              },
+              {
+                "url": "/assets/ofertas/1/img3.jpg"
+              },
+              {
+                "url": "/assets/ofertas/1/img4.jpg"
+              }
+            ]
+          },
+          "quantidade": 1
+        },
+        {
+          "oferta": {
+            "id": 5,
+            "categoria": "diversao",
+            "titulo": "Kart",
+            "descricaoOferta": "Bateria de Kart de 30 minutos.",
+            "anunciante": "Speed Kart",
+            "valor": 54.9,
+            "destaque": false,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/5/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/5/img2.jpg"
+              }
+            ]
+          },
+          "quantidade": 1
+        },
+        {
+          "oferta": {
+            "id": 3,
+            "categoria": "restaurante",
+            "titulo": "Pizzas Grandes",
+            "descricaoOferta": "Pizza Grande, Mussarela, Marguerita ou outras!",
+            "anunciante": "Nossa Pizza",
+            "valor": 21.9,
+            "destaque": false,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/3/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/3/img2.jpg"
+              },
+              {
+                "url": "/assets/ofertas/3/img3.jpg"
+              },
+              {
+                "url": "/assets/ofertas/3/img4.jpg"
+              }
+            ]
+          },
+          "quantidade": 1
+        },
+        {
+          "oferta": {
+            "id": 4,
+            "categoria": "diversao",
+            "titulo": "Estância das águas",
+            "descricaoOferta": "Diversão garantida com piscinas, trilhas e muito mais.",
+            "anunciante": "Estância das águas",
+            "valor": 31.9,
+            "destaque": true,
+            "imagens": [
+              {
+                "url": "/assets/ofertas/4/img1.jpg"
+              },
+              {
+                "url": "/assets/ofertas/4/img2.jpg"
+              },
+              {
+                "url": "/assets/ofertas/4/img3.jpg"
+              },
+              {
+                "url": "/assets/ofertas/4/img4.jpg"
+              }
+            ]
+          },
+          "quantidade": 1
+        }
+      ],
+      "id": 7
     }
   ]
 }

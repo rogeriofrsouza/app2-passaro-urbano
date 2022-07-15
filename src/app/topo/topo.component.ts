@@ -1,9 +1,9 @@
-import { CarrinhoService } from './../shared/services/carrinho.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { catchError, debounceTime, distinctUntilChanged, Observable, of, Subject, switchMap } from 'rxjs';
 
 import { Oferta } from '../shared/models/oferta.model';
 import { OfertasService } from '../shared/services/ofertas.service';
+import { CarrinhoService } from './../shared/services/carrinho.service';
 
 @Component({
   selector: 'app-topo',
@@ -11,6 +11,9 @@ import { OfertasService } from '../shared/services/ofertas.service';
   styleUrls: ['./topo.component.css']
 })
 export class TopoComponent implements OnInit {
+
+  @ViewChild('lista') public lista!: ElementRef;
+  @ViewChild('termoDaPesquisa') public termoDaPesquisa!: ElementRef;
 
   public ofertas!: Observable<Oferta[]>;
   private subjectPesquisa: Subject<string> = new Subject<string>();
@@ -26,6 +29,7 @@ export class TopoComponent implements OnInit {
         if (termoDaPesquisa.trim() === '') {
           return of<Oferta[]>([]);
         }
+        this.lista.nativeElement.classList = 'd-block';
         return this.ofertasService.pesquisaOfertas(termoDaPesquisa);
       }), 
       catchError((error: any) => {
@@ -40,7 +44,8 @@ export class TopoComponent implements OnInit {
   }
 
   public limpaPesquisa(): void {
-    this.subjectPesquisa.next('');
+    this.termoDaPesquisa.nativeElement.value = '';
+    this.lista.nativeElement.classList = 'd-none';
   }
 
 }

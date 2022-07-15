@@ -18,13 +18,15 @@
             placeholder="Pesquise por ofertas..." 
             (keyup)="pesquisa(termoDaPesquisa.value)" 
           />
-          <ul class="list-group" style="position: absolute; z-index: 10">
-            <li *ngFor="let oferta of ofertas | async" class="list-group-item">
-              <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
-                {{ oferta.titulo | descricaoReduzida: 15 }}
-              </a>
-            </li>
-          </ul>
+          <div #lista>
+            <ul class="list-group" style="position: absolute; z-index: 10">
+              <li *ngFor="let oferta of ofertas | async" class="list-group-item">
+                <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
+                  {{ oferta.titulo | descricaoReduzida: 15 }}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         
         <!-- Carrinho -->
@@ -33,7 +35,7 @@
             <a routerLink="/ordem-compra">
               <img src="../../assets/carrinho.png" alt="Carrinho">
             </a>
-            <div class="itens-carrinho text-primary">{{ carrinhoService.itens.length }}</div>
+            <div *ngIf="carrinhoService.itens.length" class="itens-carrinho">{{ carrinhoService.itens.length }}</div>
           </div>
         </div>
       </div>

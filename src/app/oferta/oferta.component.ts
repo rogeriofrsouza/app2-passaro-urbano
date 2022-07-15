@@ -22,17 +22,18 @@ export class OfertaComponent implements OnInit {
     private alertaService: AlertaService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.params.subscribe({
       next: (params: Params) => {
 
         this.ofertasService.getOfertaPorId(params['id'])
-          .then((oferta: Oferta) => this.oferta = oferta)
+          .then((oferta: Oferta) => {
+            this.oferta = oferta;
+            this.alertaService.fecharAlerta();
+          })
           .catch(error => console.log(error));
       }
     });
-
-    this.alertaService.fecharAlerta();
   }
 
   public adicionarItemCarrinho(): void {

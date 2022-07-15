@@ -35,8 +35,9 @@ a {
 }
 
 @media(min-width: 576px) {
-  .itens {
+  .itens-carrinho {
     display: block;
+    color: var(--brand-2) !important;
   }
 }
 
