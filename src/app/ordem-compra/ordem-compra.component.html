@@ -9,7 +9,7 @@
         <div *ngIf="itensCarrinho.length; else carrinhoVazio">
           <div *ngFor="let item of itensCarrinho" class="row align-items-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
             <div class="col-sm-2">
-              <img [src]="item.oferta.imagens[0].url" [alt]="item.oferta.imagens[0].alt" class="img-fluid">
+              <img [src]="item.oferta.imagens[0].url" [alt]="item.oferta.imagens[0].alt" class="img-fluid" />
             </div>
     
             <div class="col-sm-5">

@@ -15,12 +15,12 @@
 }
 
 @media(min-width: 576px) {
-  .card {
-    min-height: 515px;
-  }
-
   .col-sm-4:nth-child(2), .col-sm-4:nth-child(3) {
     padding-top: 0rem;
+  }
+
+  .card {
+    min-height: 515px;
   }
 }
 

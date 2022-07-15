@@ -12,8 +12,8 @@ import { CarrinhoService } from './../shared/services/carrinho.service';
 })
 export class TopoComponent implements OnInit {
 
-  @ViewChild('lista') public lista!: ElementRef;
   @ViewChild('termoDaPesquisa') public termoDaPesquisa!: ElementRef;
+  @ViewChild('lista') public lista!: ElementRef;
 
   public ofertas!: Observable<Oferta[]>;
   private subjectPesquisa: Subject<string> = new Subject<string>();
