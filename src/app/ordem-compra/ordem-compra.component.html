@@ -8,22 +8,22 @@
         <!-- Itens do Carrinho -->
         <div *ngIf="itensCarrinho.length; else carrinhoVazio">
           <div *ngFor="let item of itensCarrinho" class="row align-items-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-            <div class="col-sm-1">
+            <div class="col-sm-2">
               <img [src]="item.oferta.imagens[0].url" [alt]="item.oferta.imagens[0].alt" class="img-fluid">
             </div>
     
-            <div class="col-sm-6">
+            <div class="col-sm-5">
               {{ item.oferta.titulo }}<br />
               {{ item.oferta.descricaoOferta }}
             </div>
   
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <button (click)="alterarQuantidade(item, '-')" type="button" class="btn btn-link">-</button>
               {{ item.quantidade }}
               <button (click)="alterarQuantidade(item, '+')" type="button" class="btn btn-link">+</button>
             </div>
             
-            <div class="col-sm-3 d-flex justify-content-end">{{ item.quantidade * item.oferta.valor | currency }}</div>
+            <div class="col-sm-2 d-flex justify-content-end">{{ item.quantidade * item.oferta.valor | currency }}</div>
           </div>
 
           <!-- Total -->
@@ -86,8 +86,8 @@
       <h5>Dados de pagamento</h5>
       <hr />
       <div class="col-md-3">
-        <select class="form-control" formControlName="formaPagamento">
-          <option value="">Selecione uma opção</option>
+        <select class="form-select" formControlName="formaPagamento">
+          <option>Selecione uma opção</option>
           <option value="dinheiro">Dinheiro</option>
           <option value="debito">Débito</option>
         </select>

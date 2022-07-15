@@ -4,6 +4,16 @@
   padding-bottom: 6rem;
 }
 
+.col-md-2, .col-md-4 {
+  padding-top: 12px;
+}
+
+.col-sm-2 img {
+  max-width: 296px;
+  width: 100%;
+  height: auto;
+}
+
 input.ng-invalid.ng-touched, 
 select.ng-invalid.ng-touched {
   border: 1px solid var(--bs-danger);
@@ -21,4 +31,10 @@ select.ng-valid.ng-touched {
 a {
   text-decoration: none !important;
   color: var(--neutral-3) !important;
+}
+
+@media(min-width: 768px) {
+  .col-md-2, .col-md-4 {
+    padding-top: 0;
+  }
 }

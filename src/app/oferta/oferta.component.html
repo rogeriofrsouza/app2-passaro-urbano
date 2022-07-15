@@ -1,12 +1,13 @@
 <div class="container">
-  <div class="mt-4" *ngIf="oferta != undefined">
+  <div style="margin-top: 30px;" *ngIf="oferta != undefined">
     <div class="row">
       <div class="col">
         <h4>{{ oferta.descricaoOferta }}</h4>
       </div>
     </div>
-
     <div class="row">
+
+      <!-- Imagens -->
       <div class="col-md-6">
         <div class="img-capa">
           <img [src]="oferta.imagens[0].url" [alt]="oferta.imagens[0].alt" />
@@ -16,6 +17,7 @@
         </div>
       </div>
 
+      <!-- Preço -->
       <div class="col-md-6">
         <div class="row">
           <div class="col text-center">
@@ -46,7 +48,7 @@
   </div>
 
   <!-- Nav Tabs -->
-  <div class="row" style="margin-top: 2rem; margin-bottom: 4rem;">
+  <div class="row tabs">
     <div class="col">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">

@@ -1,9 +1,35 @@
 .container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   padding-bottom: 4.5rem;
+}
+
+.col-sm-4 {
+  max-width: 320px;
+}
+
+.col-sm-4:nth-child(2), .col-sm-4:nth-child(3) {
+  padding-top: 1rem;
 }
 
 .preco {
   color: var(--brand-1) !important;
   font-weight: bold;
   font-size: 20px;
+}
+
+@media(min-width: 576px) {
+  .card {
+    min-height: 515px;
+  }
+
+  .col-sm-4:nth-child(2), .col-sm-4:nth-child(3) {
+    padding-top: 0rem;
+  }
+}
+
+@media(min-width: 768px) {
+  .card {
+    min-height: 469px;
+  }
 }

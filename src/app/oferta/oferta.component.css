@@ -1,6 +1,7 @@
 .img-capa img {
-  max-width: 372px;
-  max-height: 240px;
+  max-width: 100%;
+  width: 372px;
+  height: auto;
 }
 
 .thumbnails {
@@ -20,4 +21,15 @@
   font-weight: 500;
   line-height: 1.2;
   font-size: calc(1.375rem + 1.5vw);
+}
+
+.tabs {
+  margin-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+@media(min-width: 1200px) {
+  .tabs {
+    padding-bottom: 0;
+  }
 }

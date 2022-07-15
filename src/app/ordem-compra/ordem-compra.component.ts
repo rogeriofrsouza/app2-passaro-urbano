@@ -18,7 +18,7 @@ export class OrdemCompraComponent implements OnInit {
     'endereco': new FormControl(null, [ Validators.required, Validators.minLength(3), Validators.maxLength(40) ]),
     'numero': new FormControl(null, [ Validators.required, Validators.minLength(1), Validators.maxLength(5) ]),
     'complemento': new FormControl(null),
-    'formaPagamento': new FormControl(null, [ Validators.required ])
+    'formaPagamento': new FormControl('Selecione uma opção', [ Validators.required, Validators.maxLength(8) ])
   });
 
   public idPedidoCompra?: number;

@@ -40,6 +40,10 @@ p {
   color: var(--neutral-3) !important;
 }
 
+input {
+  height: 40px;
+}
+
 .card img {
   height: 200px;
 }
