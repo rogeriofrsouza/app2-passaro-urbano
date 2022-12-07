@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ordem-compra-sucesso',
@@ -9,9 +10,10 @@ export class OrdemCompraSucessoComponent implements OnInit {
 
   @Input() public idPedidoCompra!: number;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+    setTimeout(() => this.router.navigateByUrl(''), 4000);
   }
 
 }

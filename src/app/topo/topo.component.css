@@ -8,10 +8,6 @@
   justify-content: space-between;
 }
 
-.pesquisa {
-  width: 75%;
-}
-
 a {
   text-decoration: none;
   color: var(--neutral-1);
@@ -34,20 +30,20 @@ a {
   color: var(--neutral-4);
 }
 
-@media(min-width: 576px) {
+@media (min-width: 576px) {
   .itens-carrinho {
     display: block;
     color: var(--brand-2) !important;
   }
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   .navbar-nav {
     justify-content: space-evenly;
   }
 }
 
-@media(min-width: 992px) {
+@media (min-width: 992px) {
   .container-fluid {
     padding: 0 4vw;
   }

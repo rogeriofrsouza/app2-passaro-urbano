@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Oferta } from '../shared/models/oferta.model';
-import { OfertasService } from '../shared/services/ofertas.service';
+import { Oferta } from '../../shared/models/oferta.model';
+import { OfertasService } from '../../shared/services/ofertas.service';
 
 @Component({
   selector: 'app-diversao',
@@ -16,9 +16,7 @@ export class DiversaoComponent implements OnInit {
 
   ngOnInit(): void {
     this.ofertasService.getOfertasPorCategoria('diversao')
-      .then((ofertas: Oferta[]) => {
-        this.ofertas = ofertas;
-      })
+      .then((ofertas: Oferta[]) => this.ofertas = ofertas)
       .catch(error => console.log(error));
   }
 

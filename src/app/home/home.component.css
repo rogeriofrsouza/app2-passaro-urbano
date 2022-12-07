@@ -14,7 +14,7 @@
   font-size: 20px;
 }
 
-@media(min-width: 576px) {
+@media (min-width: 576px) {
   .col-sm-4:nth-child(2), .col-sm-4:nth-child(3) {
     padding-top: 0rem;
   }
@@ -24,7 +24,7 @@
   }
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   .card {
     min-height: 469px;
   }

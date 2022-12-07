@@ -5,9 +5,14 @@
       <hr />
       
       <div class="container">
+
         <!-- Itens do Carrinho -->
         <div *ngIf="itensCarrinho.length; else carrinhoVazio">
-          <div *ngFor="let item of itensCarrinho" class="row align-items-center" style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
+          <div 
+            *ngFor="let item of itensCarrinho" 
+            class="row align-items-center" 
+            style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0"
+          >
             <div class="col-sm-2">
               <img [src]="item.oferta.imagens[0].url" [alt]="item.oferta.imagens[0].alt" class="img-fluid" />
             </div>
@@ -54,6 +59,7 @@
             autocomplete="off" 
             formControlName="endereco" 
           />
+
           <small *ngIf="formulario.get('endereco')?.valid && formulario.get('endereco')?.touched" class="form-text text-success">Ok</small>
           <small *ngIf="formulario.get('endereco')?.invalid && formulario.get('endereco')?.touched" class="form-text text-danger">Endereço inválido</small>
         </div>
@@ -66,6 +72,7 @@
             autocomplete="off" 
             formControlName="numero"
           />
+
           <small *ngIf="formulario.get('numero')?.valid && formulario.get('numero')?.touched" class="form-text text-success">Ok</small>
           <small *ngIf="formulario.get('numero')?.invalid && formulario.get('numero')?.touched" class="form-text text-danger">Número inválido</small>
         </div>
@@ -85,21 +92,30 @@
 
       <h5>Dados de pagamento</h5>
       <hr />
-      <div class="col-md-3">
-        <select class="form-select" formControlName="formaPagamento">
-          <option>Selecione uma opção</option>
-          <option value="dinheiro">Dinheiro</option>
-          <option value="debito">Débito</option>
-        </select>
-        <small *ngIf="formulario.get('formaPagamento')?.valid && formulario.get('formaPagamento')?.touched" class="form-text text-success">Ok</small>
-        <small *ngIf="formulario.get('formaPagamento')?.invalid && formulario.get('formaPagamento')?.touched" class="form-text text-danger">Forma de pagamento inválida</small>
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-select" formControlName="formaPagamento">
+            <option>Selecione uma opção</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="debito">Débito</option>
+          </select>
+          
+          <small *ngIf="formulario.get('formaPagamento')?.valid && formulario.get('formaPagamento')?.touched" class="form-text text-success">Ok</small>
+          <small *ngIf="formulario.get('formaPagamento')?.invalid && formulario.get('formaPagamento')?.touched" class="form-text text-danger">Forma de pagamento inválida</small>
+        </div>
       </div>
       <hr />
+      
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <button type="submit" class="btn btn-primary btn-lg">Cofirmar compra</button>
+        </div>
 
-      <button type="submit" class="btn btn-primary btn-lg">Cofirmar compra</button>
-
-      <!-- Alerta -->
-      <app-alerta></app-alerta>
+        <!-- Alerta -->
+        <div class="col-md-8">
+          <app-alerta></app-alerta>
+        </div>
+      </div>
     </form>
   </div>
 

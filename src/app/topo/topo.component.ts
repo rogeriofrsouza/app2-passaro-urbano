@@ -12,7 +12,7 @@ import { CarrinhoService } from './../shared/services/carrinho.service';
 })
 export class TopoComponent implements OnInit {
 
-  @ViewChild('termoDaPesquisa') public termoDaPesquisa!: ElementRef;
+  @ViewChild('inputPesquisa') public inputPesquisa!: ElementRef;
   @ViewChild('lista') public lista!: ElementRef;
 
   public ofertas!: Observable<Oferta[]>;
@@ -24,27 +24,29 @@ export class TopoComponent implements OnInit {
     this.ofertas = this.subjectPesquisa.pipe(
       debounceTime(1000), 
       distinctUntilChanged(),
-      switchMap((termoDaPesquisa: string) => {
+      switchMap(termoDaPesquisa => {
 
-        if (termoDaPesquisa.trim() === '') {
+        if (termoDaPesquisa.trim() === '')
           return of<Oferta[]>([]);
-        }
+        
         this.lista.nativeElement.classList = 'd-block';
+
         return this.ofertasService.pesquisaOfertas(termoDaPesquisa);
       }), 
       catchError((error: any) => {
         console.log(error);
+
         return of<Oferta[]>([]);
       })
     );
   }
 
-  public pesquisa(termoDaPesquisa: string): void {
+  public pesquisar(termoDaPesquisa: string): void {
     this.subjectPesquisa.next(termoDaPesquisa);
   }
 
   public limpaPesquisa(): void {
-    this.termoDaPesquisa.nativeElement.value = '';
+    this.inputPesquisa.nativeElement.value = '';
     this.lista.nativeElement.classList = 'd-none';
   }
 

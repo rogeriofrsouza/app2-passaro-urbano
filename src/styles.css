@@ -1,9 +1,7 @@
-/* ===== RESET ========== */
 * {
   box-sizing: border-box;
 }
 
-/* ===== BASE ========== */
 html {
   scroll-behavior: smooth;
 }
@@ -12,7 +10,6 @@ html, body {
   height: 100%;
 }
 
-/* ===== LAYOUT ========== */
 :root {
   --brand-1: #fb6404;
   --brand-2: #046bcb;

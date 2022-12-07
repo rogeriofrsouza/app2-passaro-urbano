@@ -45,9 +45,10 @@ export class OfertasService {
   }
 
   public pesquisaOfertas(termoDaPesquisa: string): Observable<Oferta[]> {
-    return this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?descricaoOferta_like=${termoDaPesquisa}`).pipe(
-      retry(10)
-    );
+    return this.httpClient.get<Oferta[]>(`${this.ofertasUrl}?descricaoOferta_like=${termoDaPesquisa}`)
+      .pipe(
+        retry(10)
+      );
   }
   
 }

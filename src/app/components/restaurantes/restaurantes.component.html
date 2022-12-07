@@ -5,6 +5,7 @@
   </div>
   <hr />
 
+  <!-- Ofertas categoria restaurantes -->
   <div *ngFor="let oferta of ofertas">
     <div class="row">
       <div class="col-md-4">
@@ -15,15 +16,19 @@
         <div class="row">
           <h4>{{ oferta.titulo }}</h4>
         </div>
+
         <div class="row">
           <h5>{{ oferta.descricaoOferta }}</h5>
         </div>
+
         <div class="row">
           <p>Anunciado por: <span>{{ oferta.anunciante }}</span></p>
         </div>
+
         <div class="row">
           <p class="ofertas-preco">{{ oferta.valor | currency }}</p>
-        </div>        
+        </div>
+
         <div class="row">
           <button class="btn btn-outline-success" [routerLink]="['/oferta', oferta.id]">
             Ver oferta

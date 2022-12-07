@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { Oferta } from '../shared/models/oferta.model';
-import { OfertasService } from '../shared/services/ofertas.service';
-import { AlertaService } from './../shared/services/alerta.service';
-import { CarrinhoService } from './../shared/services/carrinho.service';
+import { Oferta } from '../../shared/models/oferta.model';
+import { AlertaService } from '../../shared/services/alerta.service';
+import { CarrinhoService } from '../../shared/services/carrinho.service';
+import { OfertasService } from '../../shared/services/ofertas.service';
 
 @Component({
   selector: 'app-oferta',
@@ -27,13 +27,12 @@ export class OfertaComponent implements OnInit {
       next: (params: Params) => {
 
         this.ofertasService.getOfertaPorId(params['id'])
-          .then((oferta: Oferta) => {
-            this.oferta = oferta;
-            this.alertaService.fecharAlerta();
-          })
+          .then((oferta: Oferta) => this.oferta = oferta)
           .catch(error => console.log(error));
       }
     });
+
+    this.alertaService.fecharAlerta();
   }
 
   public adicionarItemCarrinho(): void {

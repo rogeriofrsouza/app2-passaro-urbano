@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { ItemCarrinho } from './../shared/models/item-carrinho.model';
-import { Pedido } from './../shared/models/pedido.model';
-import { AlertaService } from './../shared/services/alerta.service';
-import { CarrinhoService } from './../shared/services/carrinho.service';
-import { OrdemCompraService } from './../shared/services/ordem-compra.service';
+import { ItemCarrinho } from '../../shared/models/item-carrinho.model';
+import { Pedido } from '../../shared/models/pedido.model';
+import { AlertaService } from '../../shared/services/alerta.service';
+import { CarrinhoService } from '../../shared/services/carrinho.service';
+import { OrdemCompraService } from '../../shared/services/ordem-compra.service';
 
 @Component({
   selector: 'app-ordem-compra',
@@ -15,17 +15,17 @@ import { OrdemCompraService } from './../shared/services/ordem-compra.service';
 export class OrdemCompraComponent implements OnInit {
 
   public formulario: FormGroup = new FormGroup({
-    'endereco': new FormControl(null, [ Validators.required, Validators.minLength(3), Validators.maxLength(40) ]),
-    'numero': new FormControl(null, [ Validators.required, Validators.minLength(1), Validators.maxLength(5) ]),
+    'endereco': new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
+    'numero': new FormControl(null, [Validators.required, Validators.minLength(1), Validators.maxLength(5)]),
     'complemento': new FormControl(null),
-    'formaPagamento': new FormControl('Selecione uma opção', [ Validators.required, Validators.maxLength(8) ])
+    'formaPagamento': new FormControl('Selecione uma opção', [Validators.required, Validators.maxLength(8)])
   });
 
   public idPedidoCompra?: number;
   public itensCarrinho: ItemCarrinho[] = [];
 
   constructor(
-    private ordemCompraService: OrdemCompraService, 
+    private ordemCompraService: OrdemCompraService,
     public carrinhoService: CarrinhoService,
     public alertaService: AlertaService) { }
 
@@ -40,10 +40,12 @@ export class OrdemCompraComponent implements OnInit {
       this.formulario.get('numero')?.markAsTouched();
       this.formulario.get('complemento')?.markAsTouched();
       this.formulario.get('formaPagamento')?.markAsTouched();
-      this.alertaService.exibirAlerta('Formulário inválido, preencha os campos obrigatórios!', 'danger', 'exclamation-triangle-fill');
 
+      this.alertaService.exibirAlerta('Preencha os campos obrigatórios!', 'danger', 'exclamation-triangle-fill');
     } else {
-      if (this.itensCarrinho.length) {
+      if (!this.itensCarrinho.length) {
+        this.alertaService.exibirAlerta('Seu carrinho está vazio!', 'warning', 'exclamation-triangle-fill');
+      } else {
         let pedido: Pedido = {
           endereco: this.formulario.value.endereco,
           numero: this.formulario.value.numero,
@@ -51,15 +53,13 @@ export class OrdemCompraComponent implements OnInit {
           formaPagamento: this.formulario.value.formaPagamento,
           itens: this.itensCarrinho
         }
-        
+
         this.ordemCompraService.efetivarCompra(pedido).subscribe({
           next: (pedido: Pedido) => {
             this.idPedidoCompra = pedido.id;
             this.carrinhoService.limparCarrinho();
           }
         });
-      } else {
-        this.alertaService.exibirAlerta('Seu carrinho está vazio!', 'warning', 'exclamation-triangle-fill');
       }
     }
   }

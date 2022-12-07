@@ -33,7 +33,7 @@
   padding-bottom: 5rem;
 }
 
-@media(min-width: 1200px) {
+@media (min-width: 1200px) {
   .tabs {
     padding-bottom: 0;
   }

@@ -1,29 +1,37 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
+
+    <!-- Brand -->
     <a class="navbar-brand" routerLink="">
       <img src="../../assets/logo.png" alt="Logo">
     </a>
+
+    <!-- Navbar toggler -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav align-items-center">
 
         <!-- Caixa de pesquisa -->
-        <div class="nav-link pesquisa">
+        <div class="nav-link w-75">
           <input 
-            #termoDaPesquisa 
+            #inputPesquisa 
             type="text" 
             class="form-control" 
             placeholder="Pesquise por ofertas..." 
-            (keyup)="pesquisa(termoDaPesquisa.value)" 
+            (keyup)="pesquisar(inputPesquisa.value)" 
           />
+
           <div #lista>
             <ul class="list-group" style="position: absolute; z-index: 10">
               <li *ngFor="let oferta of ofertas | async" class="list-group-item">
                 <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
-                  {{ oferta.titulo | descricaoReduzida: 15 }}
+                  {{ oferta.titulo }}
                 </a>
+                  
+                <!-- {{ oferta.titulo | descricaoReduzida: 15 }} -->
               </li>
             </ul>
           </div>
@@ -35,6 +43,7 @@
             <a routerLink="/ordem-compra">
               <img src="../../assets/carrinho.png" alt="Carrinho">
             </a>
+
             <div *ngIf="carrinhoService.itens.length" class="itens-carrinho">{{ carrinhoService.itens.length }}</div>
           </div>
         </div>

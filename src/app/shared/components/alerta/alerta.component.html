@@ -1,10 +1,24 @@
 <div class="{{ alertaService.alertaClassList }}">
   <div class="alert alert-{{ alertaService.type }} alert-dismissible fade show" role="alert">
     <div class="d-flex align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-{{ alertaService.icon }} flex-shrink-0 me-2" viewBox="0 0 16 16" role="img">
+      
+      <!-- Imagem svg -->
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="24" 
+        height="24" 
+        fill="currentColor" 
+        class="bi bi-{{ alertaService.icon }} flex-shrink-0 me-2" 
+        viewBox="0 0 16 16" 
+        role="img"
+      >
         <path [attr.d]="alertaService.alertaIconSvgPath" />
       </svg>
+
+      <!-- Mensagem -->
       <div>{{ alertaService.message }}</div>
+
+      <!-- Button close -->
       <button type="button" class="btn-close" (click)="alertaService.fecharAlerta()"></button>
     </div>
   </div>

@@ -5,6 +5,7 @@
         <h4>{{ oferta.descricaoOferta }}</h4>
       </div>
     </div>
+
     <div class="row">
 
       <!-- Imagens -->
@@ -12,6 +13,7 @@
         <div class="img-capa">
           <img [src]="oferta.imagens[0].url" [alt]="oferta.imagens[0].alt" />
         </div>
+
         <div class="thumbnails">
           <img *ngFor="let imagem of oferta.imagens" [src]="imagem.url" [alt]="imagem.alt" />
         </div>
@@ -24,14 +26,16 @@
             <p>Por apenas</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col text-center">
             <p class="valor">{{ oferta.valor | currency }}</p>
           </div>
         </div>
+
         <div class="row">
           <div class="col text-center">
-            <button type="button" class="btn btn-warning btn-lg" (click)="adicionarItemCarrinho()">
+            <button type="button" class="btn btn-warning btn-lg mb-4" (click)="adicionarItemCarrinho()">
               Adicionar ao carrinho
             </button>
 
@@ -48,12 +52,29 @@
     <div class="col">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" data-bs-toggle="tab" routerLink="como-usar" type="button" role="tab" aria-controls="como-usar" aria-selected="true">
+          <button 
+            class="nav-link active" 
+            data-bs-toggle="tab" 
+            routerLink="como-usar" 
+            type="button" 
+            role="tab" 
+            aria-controls="como-usar" 
+            aria-selected="true"
+          >
             Como usar
           </button>
         </li>
+        
         <li class="nav-item" role="presentation">
-          <button class="nav-link" data-bs-toggle="tab" routerLink="onde-fica" type="button" role="tab" aria-controls="onde-fica" aria-selected="false">
+          <button 
+            class="nav-link" 
+            data-bs-toggle="tab" 
+            routerLink="onde-fica" 
+            type="button" 
+            role="tab" 
+            aria-controls="onde-fica" 
+            aria-selected="false"
+          >
             Onde fica?
           </button>
         </li>
