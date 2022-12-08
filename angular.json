@@ -101,10 +101,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
   },
+  "defaultProject": "app2-passaro-urbano",
   "cli": {
     "analytics": false
   }
